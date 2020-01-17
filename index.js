@@ -49,7 +49,7 @@ const STORE = [
         image: 'images/poppy.jpg'
     },
     {
-        question: 'The Titan Arum is also known as the corpse flower due to it smelling like rotten flesh. What advantage does this have for the flower?',
+        question: 'The Titan Arum smells like rotten flesh. What advantage does this have for the flower?',
         options: ['It attracts pollinators','It deters predators','It attracts a mate'],
         answer: 'It attracts pollinators',
         image: 'images/titan-arum.jpg'
@@ -68,10 +68,10 @@ let questionNum = 0;
 
 function handleStart(){
     $('.start-btn').on('click', function(event){
+        populateQuestion();
         $('.start-screen').addClass('hidden');
         $('.question-screen').removeClass('hidden');
         $('.progress').removeClass('hidden');
-        populateQuestion();
     });
 }
 
@@ -82,7 +82,7 @@ function populateQuestion(){
 
     //required not working
     for(let i=0; i<currentOptions.length; i++){
-        currentOptionsHtml.push(`<input type="radio" required name="option" id="option-${i+1}" value="${currentOptions[i]}">\
+        currentOptionsHtml.push(`<input type="radio" name="option" class="option" id="option-${i+1}" value="${currentOptions[i]}" required>\
                                  <label for="option-${i+1}">${currentOptions[i]}</label><br />`);
     }
 
@@ -95,9 +95,15 @@ function populateQuestion(){
 function handleSubmit(){
     $('.submit-btn').on('click', function(event){
         event.preventDefault();
+        let choice = $('input[name=option]:checked').val();
+        //change alert title
+        if(choice==undefined){
+            alert('Please choose an answer.');
+            return;
+        }
+        populateAnswer(choice);
         $('.question-screen').addClass('hidden');
         $('.answer-screen').removeClass('hidden');
-        populateAnswer($('input[name=option]:checked').val());
     });
 }
 
@@ -105,17 +111,29 @@ function populateAnswer(answerChoice){
     let currentQuestion = STORE[questionNum];
     if(currentQuestion.answer === answerChoice) {
         $('.answer-result').text('Correct!');
+        changeBackgroundColor('green');
         updateScore();
     }
-    else $('.answer-result').text('Wrong!');
+    else{
+        $('.answer-result').text('Wrong!');
+        changeBackgroundColor('red');
+    } 
     $('.answer-image').attr('src',currentQuestion.image);
     $('.answer-image').attr('alt',currentQuestion.image.slice(7, currentQuestion.image.length-3));
-    $('.answer-text').text(currentQuestion.answer);
+    $('.answer-text').text(`The correct answer is: ${currentQuestion.answer}`);
+}
+
+function changeBackgroundColor(color){
+   $('main').addClass(color)
+}
+function resetBackgroundColor(){
+    $('main').removeClass(); 
 }
 
 function handleNext(){
     $('.next-btn').on('click', function(event){
         $('.answer-screen').addClass('hidden');
+        resetBackgroundColor();
         if(questionNum==9){
             showResult();
         }
@@ -133,8 +151,8 @@ function showResult(){
 
 function nextQuestion(){
     updateQuestionNum()
-    $('.question-screen').removeClass('hidden');
     populateQuestion();
+    $('.question-screen').removeClass('hidden');
 }
 
 function updateScore(){
@@ -149,9 +167,9 @@ function updateQuestionNum(){
 
 function handleRestartQuiz(){
     $('.restart-btn').on('click', function(event){
+        resetQuiz();
         $('.result-screen').addClass('hidden');
         $('.start-screen').removeClass('hidden');
-        resetQuiz();
     });
 }
 

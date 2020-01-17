@@ -1,16 +1,25 @@
 *{
     box-sizing: border-box;
 }
+html { 
+    background: url(images/bg.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height:100vh;
+    font-family: 'Itim', cursive;
+
+  }
+header{
+    width: 75%;
+    margin: auto;
+}
 .title{
     text-align: center;
 }
-main{
-    width: 50%;
-    margin: 20px auto;
-    background-color: lightgrey;
-    text-align: center;
-}
-ul{
+.progress{
+    font-weight: bold;
     list-style: none;
     text-align: center;
     padding: 0;
@@ -18,8 +27,13 @@ ul{
 li{
     display: inline-block;
 }
-.option{
-    display: block;
+main{
+    width: 75%;
+    height:50vh;
+    background-color: lightgrey;
+    text-align: center;
+    border-radius: 2%;
+    position: relative;
 }
 fieldset{
     border: none;
@@ -28,13 +42,113 @@ form{
     text-align: left;
 }
 img{
-    width: 50%;
+    height: 23vh;
+    max-width: 100%;
 }
 button.submit-btn{
     display: block;
-    width: 100px;
     margin: auto;
 }
 .hidden{
     display: none;
+}
+button{
+        box-shadow:inset 0px 1px 0px 0px #efdcfb;
+        background:linear-gradient(to bottom, #dfbdfa 5%, #bc80ea 100%);
+        background-color:#dfbdfa;
+        border-radius:6px;
+        border:1px solid #c584f3;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-family:Arial;
+        font-weight:bold;
+        text-decoration:none;
+        text-shadow:0px 1px 0px #9752cc;
+    }
+button:hover {
+    background:linear-gradient(to bottom, #bc80ea 5%, #dfbdfa 100%);
+    background-color:#bc80ea;
+}
+.green{
+    background-color: rgba(71, 207, 89, 0.9);
+}
+.red{
+    background-color: rgba(245, 79, 79, 0.9);
+}
+
+@media only screen and (min-width: 320px) {
+    main{
+        background-color: rgb(209, 54, 214, 0.9);
+    }
+    
+    .title{
+        font-size: 40px;
+    }
+    .progress{
+        font-size: 18px;
+    }
+    .question-num{
+        margin-right: 20px;
+    }
+    main{
+        margin: 20px auto;
+        padding: 15px;
+        font-size: 16px;
+    }
+    .start-btn{
+        margin-top: 50px;
+    }
+    .question{
+        font-weight: bold;
+        font-size: 17px;
+    }
+    .option{
+        margin-top: 20px;
+    }
+    button{
+        font-size:13px;
+        padding:4px 24px;
+
+    }
+    .submit-btn, .next-btn{
+        position: absolute;
+        left: 0; 
+        right: 0; 
+        margin-left: auto; 
+        margin-right: auto;
+    }  
+    .submit-btn{
+        bottom: 25px;
+    }
+    .next-btn{
+        bottom: 10px;
+    }
+    .answer-result, .answer-text{
+        margin-top: 0;
+    }
+    .answer-image{
+        margin-bottom: 10px;
+    }
+    .final-score{
+        font-size: 30px;
+    }
+}
+@media only screen and (min-width: 600px) {
+    main{
+        background-color: red;
+    }
+
+}
+@media only screen and (min-width: 1000px) {
+    main{
+        background-color: blue;
+    }
+    .title{
+        font-size: 80px;
+    }
+    .progress{
+        font-size: 2em;
+    }
+
 }
