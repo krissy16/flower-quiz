@@ -66,7 +66,6 @@ const STORE = [
 let score = 0;
 let questionNum = 0;
 
-//when start button is hit, start screen is hidden, question screen is shown, and question is generated
 function handleStart(){
     $('.start-btn').on('click', function(event){
         $('.start-screen').addClass('hidden');
@@ -76,7 +75,6 @@ function handleStart(){
     });
 }
 
-//populates form with next question data
 function populateQuestion(){
     let currentQuestion = STORE[questionNum];
     let currentOptions = currentQuestion.options;
@@ -105,7 +103,6 @@ function handleSubmit(){
 
 function populateAnswer(answerChoice){
     let currentQuestion = STORE[questionNum];
-    console.log(currentQuestion.answer);
     if(currentQuestion.answer === answerChoice) {
         $('.answer-result').text('Correct!');
         updateScore();
@@ -123,11 +120,8 @@ function handleNext(){
             showResult();
         }
         else{
-            updateQuestionNum()
-            $('.question-screen').removeClass('hidden');
-            populateQuestion();
+            nextQuestion();
         }
-        
     });
 }
 
@@ -135,6 +129,12 @@ function showResult(){
     $('.result-screen').removeClass('hidden');
     $('.progress').addClass('hidden');
     $('.final-score').text(`${score}/10`)
+}
+
+function nextQuestion(){
+    updateQuestionNum()
+    $('.question-screen').removeClass('hidden');
+    populateQuestion();
 }
 
 function updateScore(){
