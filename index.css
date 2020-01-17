@@ -29,9 +29,13 @@ form{
 }
 img{
     width: 50%;
+    height: 1px;
 }
 button.submit-btn{
     display: block;
     width: 100px;
     margin: auto;
+}
+.hidden{
+    display: none;
 }

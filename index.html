@@ -6,17 +6,46 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="Free Flower Quiz">
     <title>Flower Quiz</title>
+    
     <link href="index.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
     <header role="header">
         <h1 class="title">Flower Quiz</h1>
+        <ul class="progress hidden">
+            <li class="question-num">Question: 1/10</li>
+            <li class="score">Score: 0</li>
+        </ul>
     </header>
     <main role="main">
-        <section>
+        <section class="start-screen">
             <h2>Intro Text</h2>
-            <a href="question.html"><button type="button">Start Quiz</button></a>
+            <button class="start-btn" type="button">Start Quiz</button>
+        </section>
+        <section class="question-screen hidden">
+            <form>
+                <fieldset>
+                    <legend class="question"></legend>
+                    <span class="options"></span>
+                    <button class="submit-btn" type="submit">Submit</button>
+                </fieldset>
+            </form>
+        </section>
+        <section class="answer-screen hidden">
+            <section>
+                <h2 class="answer-result">Correct!</h2>
+                <img class="answer-image" src="" alt="image description">
+                <p class="answer-text"></p>
+                <button class="next-btn" type="button">Next</button>
+            </section>
+        </section>
+        <section class="result-screen hidden">
+            <h2>Final Score: </h2>
+            <p class="final-score"></p>
+            <button class="restart-btn" type="button">Restart Quiz</button>
         </section>
     </main>
+    <script type="text/javascript" src="index.js"></script>
 </body>
 </html>
