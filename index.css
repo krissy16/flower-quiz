@@ -7,12 +7,11 @@ html {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    height:100vh;
     font-family: 'Itim', cursive;
-
   }
-header{
+header, main{
     width: 75%;
+    max-width: 700px;
     margin: auto;
 }
 .title{
@@ -28,9 +27,7 @@ li{
     display: inline-block;
 }
 main{
-    width: 75%;
-    height:50vh;
-    background-color: lightgrey;
+    background-color:  rgb(209, 54, 214, 0.9);
     text-align: center;
     border-radius: 2%;
     position: relative;
@@ -43,28 +40,24 @@ form{
 }
 img{
     height: 23vh;
-    max-width: 100%;
-}
-button.submit-btn{
-    display: block;
-    margin: auto;
+    max-width: 90%;
 }
 .hidden{
     display: none;
 }
 button{
-        box-shadow:inset 0px 1px 0px 0px #efdcfb;
         background:linear-gradient(to bottom, #dfbdfa 5%, #bc80ea 100%);
         background-color:#dfbdfa;
         border-radius:6px;
         border:1px solid #c584f3;
-        display:inline-block;
-        cursor:pointer;
-        color:#ffffff;
-        font-family:Arial;
-        font-weight:bold;
         text-decoration:none;
-        text-shadow:0px 1px 0px #9752cc;
+
+        display: block;
+        position: relative;
+        left: 0; 
+        right: 0; 
+        margin-left: auto; 
+        margin-right: auto;
     }
 button:hover {
     background:linear-gradient(to bottom, #bc80ea 5%, #dfbdfa 100%);
@@ -79,76 +72,73 @@ button:hover {
 
 @media only screen and (min-width: 320px) {
     main{
-        background-color: rgb(209, 54, 214, 0.9);
+        margin: 15px auto;
+        padding: 15px;
+        font-size: 16px;
     }
-    
+    h2{
+        font-size: 1.2em;
+    }
     .title{
-        font-size: 40px;
+        margin-bottom: 10px;
     }
     .progress{
         font-size: 18px;
+        margin: 0 auto;
     }
     .question-num{
         margin-right: 20px;
     }
-    main{
-        margin: 20px auto;
-        padding: 15px;
-        font-size: 16px;
-    }
-    .start-btn{
-        margin-top: 50px;
-    }
     .question{
         font-weight: bold;
-        font-size: 17px;
     }
     .option{
-        margin-top: 20px;
+        margin-top: 15px;
     }
     button{
-        font-size:13px;
+        font-size:14px;
         padding:4px 24px;
-
     }
-    .submit-btn, .next-btn{
-        position: absolute;
-        left: 0; 
-        right: 0; 
-        margin-left: auto; 
-        margin-right: auto;
-    }  
+    .start-btn{
+        margin: 30px auto 20px;
+    }
     .submit-btn{
-        bottom: 25px;
+        margin-top: 15px;
     }
-    .next-btn{
-        bottom: 10px;
-    }
+
     .answer-result, .answer-text{
         margin-top: 0;
+        margin-bottom: 10px;
     }
     .answer-image{
         margin-bottom: 10px;
     }
-    .final-score{
-        font-size: 30px;
+    .final-score, .final-text{
+        font-size: 1.2em;
+    }
+    .final-text{
+        margin-top: 0;
     }
 }
 @media only screen and (min-width: 600px) {
     main{
-        background-color: red;
+        font-size: 18px;
+        border-radius: 10px;
+        padding: 20px;
+        width: 60%;
     }
-
+    button{
+        font-size:16px;
+    }
+    .answer-image{
+        height: 35vh;
+    }
 }
 @media only screen and (min-width: 1000px) {
     main{
-        background-color: blue;
+        padding: 25px;
     }
-    .title{
-        font-size: 80px;
+    .answer-image{
+        height: 40vh;
     }
-    .progress{
-        font-size: 2em;
-    }
-
 }

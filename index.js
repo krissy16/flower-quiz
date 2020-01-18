@@ -2,61 +2,61 @@
 const STORE = [
     {
         question: 'For a cat, lilies are which of the following?',
-        options: ['A healthy part of their diet','A delicious treat','Toxic'],
+        options: ['A healthy part of their diet','A delicious treat','Toxic','A safe chew toy'],
         answer: 'Toxic',
         image: 'images/lily.jpg'
     },
     {
         question: 'The Titan Arum is the world’s tallest flower. How high can it grow?',
-        options: ['5 feet','10 feet','15 feet'],
+        options: ['5 feet','10 feet','15 feet','20 feet'],
         answer: '10 feet',
         image: 'images/titan-arum.jpg'
     },
     {
         question: 'What happens after the Agave blooms?',
-        options: ['It changes colors','It dies','It splits in two'],
+        options: ['It changes colors','It dies','It splits in two','Nothing'],
         answer: 'It dies',
         image: 'images/agave.jpg'
     },
     {
         question: 'Which is the world’s smallest flowering plant?',
-        options: ['Mimosa Pudica','Rafflesia arnoldii','Wolffia globose'],
+        options: ['Mimosa Pudica','Rafflesia arnoldii','Wolffia globose','Grass'],
         answer: 'Wolffia globose',
         image: 'images/wolffia-globose.jpg'
     },
     {
         question: 'Which common food is actually a flower?',
-        options: ['Apple','Broccoli','Blueberry'],
+        options: ['Apple','Broccoli','Blueberry','Pear'],
         answer: 'Broccoli',
         image: 'images/broccoli.jpg'
     },
     {
         question: 'Which of these can be used in place of an onion in cooking?',
-        options: ['Tulip Bulb','Rose Stem','Lily Leaf'],
+        options: ['Tulip Bulb','Rose Stem','Grass','Lily Leaf'],
         answer: 'Tulip Bulb',
         image: 'images/tulip.jpg'
     },
     {
         question: 'What flower has the world’s largest bloom?',
-        options: ['Rafflesia arnoldii','Wolffia globose','Mimosa Pudica'],
+        options: ['Rafflesia arnoldii','Wolffia globose','Mimosa Pudica','Tulip'],
         answer: 'Rafflesia arnoldii',
         image: 'images/rafflesia-arnoldii.jpg'
     },
     {
         question: 'In America, about 60% of fresh cut flowers come from where?',
-        options: ['Wyoming','Florida ','California'],
+        options: ['Wyoming','Florida ','California','New York'],
         answer: 'California',
         image: 'images/poppy.jpg'
     },
     {
         question: 'The Titan Arum smells like rotten flesh. What advantage does this have for the flower?',
-        options: ['It attracts pollinators','It deters predators','It attracts a mate'],
+        options: ['It attracts pollinators','It deters predators','It attracts a mate','It helps the plant grow'],
         answer: 'It attracts pollinators',
         image: 'images/titan-arum.jpg'
     },
     {
         question: 'What happens when you touch the Mimosa Pudica?',
-        options: ['You get a rash','It folds up its leaves','It releases an odor'],
+        options: ['You get a rash','It folds up its leaves','It changes color','It releases an odor'],
         answer: 'It folds up its leaves',
         image: 'images/mimosa-pudica.jpg'
     },
