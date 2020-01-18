@@ -29,8 +29,8 @@
             <form>
                 <fieldset>
                     <legend class="question"></legend>
-                    <span class="options"></span>
-                    <button class="submit-btn" type="submit">Submit</button>
+                    <span role="radiogroup" class="options"></span>
+                    <button role="button" class="submit-btn" type="submit">Submit</button>
                 </fieldset>
             </form>
         </section>
@@ -39,13 +39,13 @@
                 <h2 class="answer-result">Correct!</h2>
                 <img class="answer-image" src="" alt="image description">
                 <p class="answer-text"></p>
-                <button class="next-btn" type="button">Next</button>
+                <button role="button" class="next-btn" type="button">Next</button>
             </section>
         </section>
         <section class="result-screen hidden">
             <h2 class="final-text">Final Score: </h2>
             <p class="final-score"></p>
-            <button class="restart-btn" type="button">Restart Quiz</button>
+            <button role="button" class="restart-btn" type="button">Restart Quiz</button>
         </section>
     </main>
     <script type="text/javascript" src="index.js"></script>

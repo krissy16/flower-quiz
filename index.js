@@ -80,9 +80,9 @@ function populateQuestion(){
     let currentOptions = currentQuestion.options;
     let currentOptionsHtml = [];
 
-    //required not working
     for(let i=0; i<currentOptions.length; i++){
-        currentOptionsHtml.push(`<input type="radio" name="option" class="option" id="option-${i+1}" value="${currentOptions[i]}" required>\
+        currentOptionsHtml.push(`<input type="radio" name="option" class="option" id="option-${i+1}" value="${currentOptions[i]}"\
+                                    role="radio" aria-checked="false" tabindex="${i+1}" required>\
                                  <label for="option-${i+1}">${currentOptions[i]}</label><br />`);
     }
 
@@ -93,14 +93,9 @@ function populateQuestion(){
 
 
 function handleSubmit(){
-    $('.submit-btn').on('click', function(event){
+    $('form').on('submit', function(event){
         event.preventDefault();
         let choice = $('input[name=option]:checked').val();
-        //change alert title
-        if(choice==undefined){
-            alert('Please choose an answer.');
-            return;
-        }
         populateAnswer(choice);
         $('.question-screen').addClass('hidden');
         $('.answer-screen').removeClass('hidden');
@@ -119,7 +114,7 @@ function populateAnswer(answerChoice){
         changeBackgroundColor('red');
     } 
     $('.answer-image').attr('src',currentQuestion.image);
-    $('.answer-image').attr('alt',currentQuestion.image.slice(7, currentQuestion.image.length-3));
+    $('.answer-image').attr('alt',currentQuestion.image.slice(7, currentQuestion.image.length-4));
     $('.answer-text').text(`The correct answer is: ${currentQuestion.answer}`);
 }
 
